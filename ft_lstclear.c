@@ -9,19 +9,19 @@
 /*   Updated: 2021/12/09 11:21:11 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	if (!lst)
+	if (!*lst || !lst || !*del)
 		return ;
 	while (*lst)
 	{
 		temp = (*lst)->next;
-		del((*lst)->content);
-		free(*lst);
-		(*lst) = temp;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
 	}
 }

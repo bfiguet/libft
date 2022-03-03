@@ -9,6 +9,7 @@
 /*   Updated: 2021/12/08 10:08:27 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstadd_front(t_list **alst, t_list *new)

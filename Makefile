@@ -6,12 +6,13 @@
 #    By: bfiguet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 19:08:42 by bfiguet           #+#    #+#              #
-#    Updated: 2022/01/10 14:43:07 by bfiguet          ###   ########.fr        #
+#    Updated: 2022/03/02 13:12:33 by bfiguet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
+INCLUDE = libft.h
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rc
 RM = rm -f
