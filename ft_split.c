@@ -9,7 +9,12 @@
 /*   Updated: 2022/01/10 11:55:27 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
+
+/*Alloue (avec malloc(3)) et retourne un tableau de chaînes de caractères
+obtenu en séparant ’s’ à l’aide du caractère ’c’, utilisé comme délimiteur.
+Le tableau doit être terminé par NULL.*/
 
 static int	ft_countw(char const *s, char c)
 {
@@ -73,11 +78,3 @@ char	**ft_split(char const *s, char c)
 	res[i] = 0;
 	return (res);
 }
-/*
-#include <stdio.h>
- int      main(void)
-{
-    char test[] = "Hello ecole 42!";
-    printf("%s/ %s\n", test, *ft_split(test, 'e'));
-    printf("%s/ %s\n", test, *ft_split(test, ' '));
-}*/
