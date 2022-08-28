@@ -13,25 +13,12 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
+	if (!s)
+		return (0);
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }
-/*#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-int    main()
-{
-    const char    *str = "Hello";
-    printf("%s %ld : %ld\n", str, strlen(str), ft_strlen(str));
-    str = "ecole";
-    printf("%s %ld : %ld\n", str, strlen(str), ft_strlen(str));
-    str = "42";
-    printf("%s %ld : %ld\n", str, strlen(str), ft_strlen(str));
-    str = "";
-    printf("%s %ld : %ld\n", str, strlen(str), ft_strlen(str));
-    return (0);
-}*/

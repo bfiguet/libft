@@ -6,74 +6,55 @@
 /*   By: bfiguet <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 15:57:47 by bfiguet           #+#    #+#             */
-/*   Updated: 2022/01/10 11:55:27 by bfiguet          ###   ########.fr       */
+/*   Updated: 2022/05/30 18:34:05 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-/*Alloue (avec malloc(3)) et retourne un tableau de chaînes de caractères
-obtenu en séparant ’s’ à l’aide du caractère ’c’, utilisé comme délimiteur.
-Le tableau doit être terminé par NULL.*/
-
-static int	ft_countw(char const *s, char c)
+static size_t	ft_countw(char const *s, char c)
 {
-	int	i;
-	int	count;
+	size_t	count;
 
-	i = 0;
 	count = 0;
-	while (s[i])
+	if (!*s)
+		return (0);
+	while (*s)
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != c && s[i])
+		while (*s == c)
+			s++;
+		if (*s)
 			count++;
-		while (s[i] && s[i] != c)
-			i++;
+		while (*s && *s != c)
+			s++;
 	}
 	return (count);
 }
 
-static char	*ft_w(const char *s, char c)
-{
-	char	*w;
-	int		i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	w = malloc(sizeof(char) * (i + 1));
-	if (!w)
-		return (NULL);
-	ft_strlcpy(w, s, i + 1);
-	return (w);
-}
-
 char	**ft_split(char const *s, char c)
 {
-	char		**res;
-	int			i;
-	int			len;
+	char	**res;
+	size_t	len;
+	int		i;
 
-	len = ft_countw(s, c);
-	res = malloc(sizeof(char *) * (len + 1));
+	res = malloc(sizeof(char *) * (ft_countw(s, c) + 1));
 	if (!s || !res)
-		return (NULL);
-	i = -1;
-	while (++i < len)
+		return (0);
+	i = 0;
+	while (*s)
 	{
-		while (s[0] == c)
+		while (*s == c && *s)
 			s++;
-		res[i] = ft_w(s, c);
-		if (!res[i])
+		if (*s)
 		{
-			while (i > 0)
-				free(res[i--]);
-			free(res);
-			return (NULL);
+			if (!ft_strchr(s, c))
+				len = ft_strlen(s);
+			else
+				len = ft_strchr(s, c) - s;
+			res[i++] = ft_substr(s, 0, len);
+			s += len;
 		}
-		s = s + ft_strlen(res[i]);
 	}
 	res[i] = 0;
 	return (res);

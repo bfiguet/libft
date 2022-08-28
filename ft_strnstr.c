@@ -11,10 +11,6 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-/*function locates the	first occurrence of the	null-terminated string little 
-in the string big, where not more than len characters are searched.
-Characters that appear after a '\0' character are not searched.*/
-
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
@@ -37,3 +33,23 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+int    main()
+{
+    char    *s1;
+    char    *s2;
+    int n;
+    
+    s1 = "Hello toi";
+    s2 = "Hello";
+    n = 10;
+    printf("str: %s\n", s1);
+    printf("s2: %s/ %s : %s\n",s2,  strnstr(s1, s2, n), ft_strnstr(s1, s2, n));
+    s2 = "Hello moi";
+    printf("s2: %s/ %s : %s\n", s2, strnstr(s1, s2, n), ft_strnstr(s1, s2, n));
+    s2 = "Hel";
+    printf("s2: %s/ %s : %s\n", s2, strnstr(s1, s2, n), ft_strnstr(s1, s2, n));
+    return (0);
+}*/

@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 #include "libft.h"
 
+//whitespaces: 9 -> 13 + ' '
+
 static int	ft_wspace(char c)
 {
 	if (c == ' ' || c == '\n' || c == '\t'
@@ -48,25 +50,3 @@ int	ft_atoi(const char *str)
 	}
 	return (nbr * sign);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int    main()
-{
-    char *str;
-
-    str = "-99999999999999999999999999";
-    printf("%s / %d : %d\n", str, atoi(str), ft_atoi(str));
-    str = "99999999999999999999999999";
-    printf("%s / %d : %d\n", str, atoi(str), ft_atoi(str));
-    str = "  - 42 au 96...";
-    printf("%s / %d : %d\n", str, atoi(str), ft_atoi(str));
-    str = "  --42 au 96...";
-    printf("%s / %d : %d\n", str, atoi(str), ft_atoi(str));
-    str = "  -42 au 96...";
-    printf("%s / %d : %d\n", str, atoi(str), ft_atoi(str));
-    str = "  +42 au 96...";
-    printf("%s / %d : %d\n", str, atoi(str), ft_atoi(str));
-    str = "  ++42 au 96...";
-    printf("%s / %d : %d\n", str, atoi(str), ft_atoi(str));
-}*/

@@ -6,7 +6,7 @@
 #    By: bfiguet <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 19:08:42 by bfiguet           #+#    #+#              #
-#    Updated: 2022/03/02 13:12:33 by bfiguet          ###   ########.fr        #
+#    Updated: 2022/06/24 15:16:45 by bfiguet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS = \
 	ft_tolower.c \
 	ft_strchr.c \
 	ft_strrchr.c \
+	ft_str_isdigit.c \
 	ft_strncmp.c \
 	ft_memchr.c \
 	ft_memcmp.c \
@@ -52,6 +53,7 @@ SRCS = \
 	ft_putstr_fd.c \
 	ft_putnbr_fd.c \
 	ft_putendl_fd.c \
+	ft_atol.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -68,17 +70,31 @@ BSRC = \
 
 BONUS = $(BSRC:.c=.o)
 
+FTPRINTF = \
+	ft_printf.c \
+	ft_printf_utils.c \
+	ft_print_hexa.c \
+	ft_print_ptr.c \
+	ft_print_unsigned.c \
+
+FTGNL = \
+	get_next_line.c \
+	get_next_line_utils.c \
+
+OFTPRINTF = $(FTPRINTF:.c=.o)
+OGNL = $(FTGNL:.c=.o)
+
 all: $(NAME) bonus
 
 .c.o :
 	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
 
-$(NAME): $(OBJS)
-	$(AR)  $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(OFTPRINTF) $(OGNL)
+	$(AR)  $(NAME) $(OBJS) $(OFTPRINTF) $(OGNL)
 	ranlib $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(BONUS)
+	$(RM) $(OBJS) $(BONUS) $(OFTPRINTF) $(OGNL)
 
 fclean: clean
 	$(RM) $(NAME)

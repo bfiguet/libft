@@ -9,12 +9,8 @@
 /*   Updated: 2022/01/10 14:09:24 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 #include<stdlib.h>
-
-/*Alloue (avec malloc(3)) et retourne une nouvelle
-chaîne, résultat de la concaténation de s1 et s2.*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
