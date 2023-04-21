@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfiguet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 17:39:46 by bfiguet           #+#    #+#             */
-/*   Updated: 2021/11/30 17:44:15 by bfiguet          ###   ########.fr       */
+/*   Updated: 2022/11/28 13:12:51 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include"libft.h"
 
 int	ft_isdigit(int c)

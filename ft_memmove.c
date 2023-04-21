@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfiguet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:08:04 by bfiguet           #+#    #+#             */
-/*   Updated: 2021/12/05 20:48:25 by bfiguet          ###   ########.fr       */
+/*   Updated: 2022/11/28 13:13:41 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
@@ -39,14 +40,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dest);
 }
-/*#include <stdio.h>
-#include <string.h>
-int    main()
-{
-    char dest[50] = "oldstring";
-    char src[50] = "newstring";
-    printf("Before dest = %s, src = %s\n", dest, src);
-    printf("After dest= %s/ %s : %s\n", dest, memmove(dest, src, 10),
-	ft_memmove(dest, src, 10));
-    return(0);
-}*/

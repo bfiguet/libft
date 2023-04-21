@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfiguet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:28:45 by bfiguet           #+#    #+#             */
-/*   Updated: 2022/01/10 11:28:55 by bfiguet          ###   ########.fr       */
+/*   Updated: 2022/11/28 13:13:33 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
@@ -25,16 +26,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-/*#include <string.h>
-#include <stdio.h>
-int    main()
-{
-    char dest[] = "oldstring";
-    char src[] = "newstring";
-
-    printf("Before dest = %s, src = %s\n", dest, src);
-    printf("After dest= %s/ %s : %s\n", dest, memcpy(dest, src, 10),
-	ft_memcpy(dest, src, 10));
-
-    return(0);
-}*/

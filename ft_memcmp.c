@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfiguet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 13:51:37 by bfiguet           #+#    #+#             */
-/*   Updated: 2021/12/05 23:46:05 by bfiguet          ###   ########.fr       */
+/*   Updated: 2022/11/28 13:16:17 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t size)
@@ -24,17 +25,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t size)
 	}
 	return (0);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-int    main()
-{
-    char dest[] = "oldstring";
-    char src[] = "newstring";
-
-    printf("Before dest = %s, src = %s\n", dest, src);
-    printf("After dest= %s/ %d : %d\n", dest, memcmp(dest, src, 10),
-	ft_memcmp(dest, src, 10));
-
-    return(0);
-}*/

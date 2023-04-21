@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfiguet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 16:35:59 by bfiguet           #+#    #+#             */
-/*   Updated: 2021/12/09 18:16:27 by bfiguet          ###   ########.fr       */
+/*   Updated: 2022/08/29 19:03:23 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strmapi(char const *s1, char (*f)(unsigned int, char))

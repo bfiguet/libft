@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bfiguet <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 17:17:17 by bfiguet           #+#    #+#             */
-/*   Updated: 2021/12/13 17:55:06 by bfiguet          ###   ########.fr       */
+/*   Updated: 2022/11/28 13:17:42 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include<stdlib.h>
 
 static int	ft_set(char c, const char *set)
 {

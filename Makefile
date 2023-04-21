@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bfiguet <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 19:08:42 by bfiguet           #+#    #+#              #
-#    Updated: 2022/06/24 15:16:45 by bfiguet          ###   ########.fr        #
+#    Updated: 2023/04/03 16:37:04 by bfiguet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,11 @@ AR = ar rc
 RM = rm -f
 
 SRCS = \
+	free_tab.c \
+	ft_strrev.c \
+	ft_isspace.c \
+	ft_isblanck.c \
+	ft_skip_space.c \
 	ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isalnum.c \
@@ -27,14 +32,18 @@ SRCS = \
 	ft_memset.c \
 	ft_bzero.c \
 	ft_memcpy.c \
+	ft_mem_free.c \
 	ft_memmove.c \
+	ft_strcpy.c \
 	ft_strlcpy.c \
 	ft_strlcat.c \
+	ft_tablen.c \
 	ft_toupper.c \
 	ft_tolower.c \
 	ft_strchr.c \
 	ft_strrchr.c \
 	ft_str_isdigit.c \
+	ft_strcmp.c \
 	ft_strncmp.c \
 	ft_memchr.c \
 	ft_memcmp.c \
@@ -42,8 +51,10 @@ SRCS = \
 	ft_atoi.c \
 	ft_calloc.c \
 	ft_strdup.c \
+	ft_strndup.c \
 	ft_substr.c \
 	ft_strjoin.c \
+	ft_strjoin2.c \
 	ft_strtrim.c \
 	ft_split.c \
 	ft_itoa.c \
@@ -52,6 +63,7 @@ SRCS = \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putnbr_fd.c \
+	ft_putendl.c \
 	ft_putendl_fd.c \
 	ft_atol.c \
 
@@ -90,7 +102,7 @@ all: $(NAME) bonus
 	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
 
 $(NAME): $(OBJS) $(OFTPRINTF) $(OGNL)
-	$(AR)  $(NAME) $(OBJS) $(OFTPRINTF) $(OGNL)
+	$(AR)  $(NAME) $^
 	ranlib $(NAME)
 
 clean:
@@ -99,7 +111,7 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: clean all
+re: fclean all
 
 bonus: $(NAME) $(BONUS)
 		$(AR) $(NAME) $(BONUS)
