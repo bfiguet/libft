@@ -6,7 +6,7 @@
 /*   By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 18:42:35 by bfiguet           #+#    #+#             */
-/*   Updated: 2023/04/03 16:36:56 by bfiguet          ###   ########.fr       */
+/*   Updated: 2023/10/31 15:03:32 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ typedef struct s_list
 }					t_list;
 
 void			free_tab(char **tab);
-char			*ft_strrev(char *str);
 void			ft_skip_space(char *str, int *i);
-int				ft_isblank(int c);
-int				ft_isspace(int c);
+int				ft_issymbol(int c);
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
@@ -48,6 +46,8 @@ void			*ft_memmove(void *dst, const void *src, size_t len);
 char			*ft_strcpy(char *dest, char *src);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
+char			*ft_strcat(char *dst, const char *src);
+char			*ft_strcat_malloc(char *str1, const char *str2);
 int				ft_tablen(char **tab);
 int				ft_toupper(int c);
 int				t_tolower(int c);
@@ -63,12 +63,13 @@ char			*ft_strnstr(const char *haystack, const char *needle,
 					size_t len);
 int				ft_atoi(const char *str);
 long long int	ft_atol(const char *str);
+int				ft_itoa_no_malloc(int nbr, char *buff);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s);
-char			*ft_strndup(const char s1, size_t n);
+char			*ft_strndup(const char *s1, size_t n);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
-char			*ft_strjoin2(char const *s1, char const *s2);
-char			*ft_strjoin(char *s1, const char *s2);
+char			*ft_strjoin2(char *s1, char const *s2);
+char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(const char *s, char c);
 char			*ft_itoa(int n);
@@ -96,7 +97,7 @@ int				ft_print_str(char *s);
 int				ft_print_nbr(int n);
 int				ft_print_percent(void);
 //ft_printf.c
-int				ft_printchar(int c);;
+int				ft_printchar(int c);
 int				ft_flags(va_list args, const char type);
 int				ft_printf(const char *s, ...);
 //ft_printhexa.c

@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin2.c                                      :+:      :+:    :+:   */
+/*   ft_issymbol.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 02:49:16 by bfiguet           #+#    #+#             */
-/*   Updated: 2023/10/31 15:02:31 by bfiguet          ###   ########.fr       */
+/*   Created: 2023/10/04 17:16:11 by bfiguet           #+#    #+#             */
+/*   Updated: 2023/10/16 12:30:17 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
+#include"stdio.h"
 
-char	*ft_strjoin2(char *s1, const char *s2)
+int	ft_issymbol(int c)
 {
-	char	*str;
-	int		i;
-	int		j;
-
-	if (s1 == 0 || s2 == 0)
-		return (0);
-	i = 0;
-	j = 0;
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!str)
-		return (0);
-	while (s1[i] != '\0')
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	while (s2[j] != '\0')
-	{
-		str[i] = s2[j];
-		i++;
-		j++;
-	}
-	str[i] = '\0';
-	return (str);
+	if ((c >= ':' && c <= '@') || (c >= '[' && c <= '`')
+		|| (c >= '{' && c <= '~'))
+		return (1);
+	return (0);
 }

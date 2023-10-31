@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin2.c                                      :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 02:49:16 by bfiguet           #+#    #+#             */
-/*   Updated: 2023/10/31 15:02:31 by bfiguet          ###   ########.fr       */
+/*   Created: 2023/10/30 07:29:06 by bfiguet           #+#    #+#             */
+/*   Updated: 2023/10/30 07:29:26 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-char	*ft_strjoin2(char *s1, const char *s2)
+char	*ft_strcat(char *dst, const char *src)
 {
-	char	*str;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
-	if (s1 == 0 || s2 == 0)
-		return (0);
-	i = 0;
+	i = ft_strlen(dst);
 	j = 0;
-	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!str)
-		return (0);
-	while (s1[i] != '\0')
+	while (src[j])
 	{
-		str[i] = s1[i];
-		i++;
-	}
-	while (s2[j] != '\0')
-	{
-		str[i] = s2[j];
+		dst[i] = src[j];
 		i++;
 		j++;
 	}
-	str[i] = '\0';
-	return (str);
+	dst[i] = '\0';
+	return (dst);
 }

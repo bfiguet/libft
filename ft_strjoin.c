@@ -6,13 +6,27 @@
 /*   By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 16:19:12 by bfiguet           #+#    #+#             */
-/*   Updated: 2023/01/27 02:53:54 by bfiguet          ###   ########.fr       */
+/*   Updated: 2023/10/31 15:18:40 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char *s1, const char *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*str;
+
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (str == NULL)
+		return (0);
+	ft_memcpy(str, s1, (ft_strlen(s1) + 1));
+	ft_strcat(str, s2);
+	return (str);
+}
+
+/*char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	int		i;
@@ -39,4 +53,4 @@ char	*ft_strjoin(char *s1, const char *s2)
 	free((char *)s1);
 	str[i] = '\0';
 	return (str);
-}
+}*/

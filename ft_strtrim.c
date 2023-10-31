@@ -6,15 +6,16 @@
 /*   By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 17:17:17 by bfiguet           #+#    #+#             */
-/*   Updated: 2022/11/28 13:17:42 by bfiguet          ###   ########.fr       */
+/*   Updated: 2023/10/16 13:12:45 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static int	ft_set(char c, const char *set)
+static int	is_set(char c, char const *set)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (set[i])
@@ -30,26 +31,26 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
-	size_t	i;
-	char	*str;
 
-	if (!s1 || !set)
-		return (NULL);
+	if (!s1)
+		return (ft_strdup(""));
+	if (!set)
+		return (ft_strdup(s1));
 	start = 0;
-	i = 0;
 	end = ft_strlen(s1);
-	while (s1[start] && ft_set(s1[start], set))
+	while (is_set(s1[start], set))
+	{
 		start++;
-	while (end > start && ft_set(s1[end - 1], set))
+	}
+	if (start == end)
+		return (ft_strdup(""));
+	while (is_set(s1[end - 1], set))
+	{
 		end--;
-	str = malloc(sizeof(char) * (end - start + 1));
-	if (!str)
-		return (NULL);
-	while (start < end)
-		str[i++] = s1[start++];
-	str[i] = '\0';
-	return (str);
+	}
+	return (ft_substr(s1, start, end - start));
 }
+
 /*
 #include<stdio.h>
 int	main()

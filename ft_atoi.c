@@ -6,7 +6,7 @@
 /*   By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 04:51:47 by bfiguet           #+#    #+#             */
-/*   Updated: 2022/11/28 13:14:56 by bfiguet          ###   ########.fr       */
+/*   Updated: 2023/10/29 11:30:25 by bfiguet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,30 @@
 
 //whitespaces: 9 -> 13 + ' '
 
-static int	ft_wspace(char c)
-{
-	if (c == ' ' || c == '\n' || c == '\t'
-		|| c == '\v' || c == '\f' || c == '\r')
-		return (1);
-	else
-		return (0);
-}
-
 int	ft_atoi(const char *str)
 {
-	size_t		i;
-	long		nbr;
-	long		sign;
+	int	num;
+	int	isneg;
+	int	i;
 
+	num = 0;
+	isneg = 1;
 	i = 0;
-	nbr = 0;
-	sign = 1;
-	while ((str[i] != '\0') && ft_wspace(str[i]) == 1)
+	while (str[i] && (str[i] == ' ' || str[i] == '\t'
+			|| str[i] == '\n' || str[i] == '\r'
+			|| str[i] == '\v' || str[i] == '\f'))
 		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] == '+')
+		i++;
+	else if (str[i] == '-')
 	{
-		if (str[i] == '-')
-			sign = -1;
+		isneg *= -1;
 		i++;
 	}
-	while ((str[i] != '\0') && (str[i] >= '0' && str[i] <= '9'))
+	while (ft_isdigit(str[i]))
 	{
-		nbr = (nbr * 10) + (str[i] - '0');
-		if (nbr > 2147483647 && sign == 1)
-			return (-1);
-		if (nbr > 2147483648 && sign == -1)
-			return (0);
+		num = (num * 10) + (str[i] - '0');
 		i++;
 	}
-	return (nbr * sign);
+	return (num * isneg);
 }

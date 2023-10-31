@@ -6,7 +6,7 @@
 #    By: bfiguet <bfiguet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 19:08:42 by bfiguet           #+#    #+#              #
-#    Updated: 2023/04/03 16:37:04 by bfiguet          ###   ########.fr        #
+#    Updated: 2023/10/30 07:29:47 by bfiguet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,8 @@ RM = rm -f
 
 SRCS = \
 	free_tab.c \
-	ft_strrev.c \
-	ft_isspace.c \
-	ft_isblanck.c \
 	ft_skip_space.c \
+	ft_issymbol.c \
 	ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isalnum.c \
@@ -37,6 +35,8 @@ SRCS = \
 	ft_strcpy.c \
 	ft_strlcpy.c \
 	ft_strlcat.c \
+	ft_strcat.c \
+	ft_strcat_malloc.c \
 	ft_tablen.c \
 	ft_toupper.c \
 	ft_tolower.c \
@@ -58,6 +58,7 @@ SRCS = \
 	ft_strtrim.c \
 	ft_split.c \
 	ft_itoa.c \
+	ft_itoa_no_malloc.c \
 	ft_strmapi.c \
 	ft_striteri.c \
 	ft_putchar_fd.c \
